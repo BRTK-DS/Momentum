@@ -69,7 +69,7 @@ class gm(commands.Cog):
                     name="", value="🙌 " + random.choice(random_message)
                 )
                 embed_streak.add_field(
-                    name="", value=f"🌅 Poranki: {streak_wakeups}", inline=False
+                    name=f"🌅 Poranki: {streak_wakeups}", value="", inline=False
                 )
                 if ctx.author.avatar:
                     embed_streak.set_thumbnail(url=ctx.author.avatar.url)
@@ -92,7 +92,7 @@ class gm(commands.Cog):
             streak_wakeups = updated_record["streak_wakeups"]
         else:
             reply_message = Embed(title="Dzień dobry!", color=0xFEF65B)
-            reply_message.add_field(name="", value=f"🙌 Co dobrego Cię dzisiaj spotka?")
+            reply_message.add_field(name="", value=f"🙌 " + random.choice(random_message))
             reply_message.add_field(
                 name=f"🌅 Poranki: {streak_wakeups}", value="", inline=False
             )
