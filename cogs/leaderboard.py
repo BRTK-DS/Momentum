@@ -28,12 +28,12 @@ class leaderboard(commands.Cog):
         sorted_leaderboard = sorted(leaderboard, key=lambda x: x['streaks'][activity], reverse=True)[:10]
         emoji = act[activity]
         
-        embed = Embed(title=f"Leaderboard dla {activity.capitalize()} {emoji}", color=0x280586)
+        embed = Embed(title=f"🏆 Leaderboard dla {activity.capitalize()} {emoji}", color=0x280586)
         for index, entry in enumerate(sorted_leaderboard):
             user = await self.bot.fetch_user(entry['user_id'])
             streak_count = entry['streaks'][activity]
-            embed.add_field(name=f"{index+1}. {user.display_name}", 
-                            value=f"Streak: {streak_count}",
+            embed.add_field(name=f"{index+1}. {user.display_name}",
+                            value=f"🔥 Total: {streak_count}",
                             inline=False
                             )
             embed.set_thumbnail(url=thumbnail)
