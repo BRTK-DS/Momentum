@@ -91,8 +91,8 @@ class prefixdone(commands.Cog):
             embed.add_field(name=f"{emoji} {activity_type.capitalize()}" + f": {streak_count}", value="", inline=False)
         await ctx.send(embed=embed)
         
-    @commands.command()
-    async def sukces(self, ctx):
+    @commands.command(aliases=['sukces', 'mit'])
+    async def sumit(self, ctx):
         user_id = str(ctx.author.id)
         user_record = collection.find_one({'user_id': user_id})
     
@@ -111,7 +111,7 @@ class prefixdone(commands.Cog):
             user_record['streaks'] = {act_type: 0 for act_type in act}
             user_record['last_reset'] = today.strftime('%Y-%m-%d')
     
-        activity = 'medytacja'  # For this command, activity is always 'trening'
+        activity = 'sukces'  # For this command, activity is always 'trening'
 
         user_record['streaks'][activity.lower()] = user_record['streaks'].get(activity.lower(), 0) + 1
         collection.update_one({'user_id': user_id}, {'$set': user_record}, upsert=True)
