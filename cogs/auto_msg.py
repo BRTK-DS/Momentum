@@ -16,8 +16,7 @@ class auto_msg(commands.Cog):
                 12, 59
             ): "**Kończymy na dziś**. <@404038151565213696>, <@1082683392342114335> i ja, dziękujemy Wam za to spotkanie. Pamiętajcie, że zawsze możecie wrzucić kolejne tematy na agendę, dodając je na stronie [Daily Coaching - tematy](https://apply.siadlak.com/tematy-daily-coaching). Dzięki raz jeszcze i do jutra!",
         }
-        self.channel_id_test = 1253055744937295922
-        # self.channel_id = 1120658406160732160
+        self.channel_id = 1120658406160732160
         self.check_time.start()
 
     @tasks.loop(seconds=60)
