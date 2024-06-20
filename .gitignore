@@ -4,6 +4,7 @@
 /requirements.txt
 /__pycache__
 /cogs/__pycache__
+/cogs/auto_record.py
 /random_msg.py
 images.py
 .vscode
